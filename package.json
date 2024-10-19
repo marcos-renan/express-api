@@ -1,9 +1,11 @@
 {
   "name": "express-api",
   "version": "1.0.0",
+  "type": "module",
   "description": "API feita com Express.js e Javascript",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,5 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
