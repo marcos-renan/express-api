@@ -9,7 +9,7 @@ const app = express();
 // recebendo como json
 app.use(express.json());
 
-//Rota post
+//Rota post para criar usuario
 app.post('/usuarios', async (req, res) => {
 
   await prisma.user.create({
@@ -24,7 +24,7 @@ app.post('/usuarios', async (req, res) => {
 
 });
 
-//criando rota get
+//Rota get para receber informações do usuario
 app.get('/usuarios', async(req, res) => {
 
   const users = await prisma.user.findMany()
@@ -32,6 +32,8 @@ app.get('/usuarios', async(req, res) => {
   res.status(200).json(users)
 });
 
+
+//Rota put para atualizar dados do usuario
 app.put("/usuarios/:id", async (req, res) => {
 
   await prisma.user.update({
@@ -51,6 +53,7 @@ app.put("/usuarios/:id", async (req, res) => {
 
 });
 
+//Rota delete para deletar o usuario
 app.delete('/usuarios/:id', async (req, res) => {
 
   await prisma.user.delete({
@@ -62,5 +65,5 @@ app.delete('/usuarios/:id', async (req, res) => {
   res.status(200).json({message: 'Usuário deletado com sucesso!'})
 })
 
-
+//Porta
 app.listen(3000);
