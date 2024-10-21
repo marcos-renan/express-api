@@ -1,2 +1,2 @@
 # Express API
-API feita com Express.js e Javascript
+API de CRUD feita com Express.js, Prisma ORM e Javascript.
